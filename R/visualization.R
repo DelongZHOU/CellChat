@@ -1736,6 +1736,7 @@ netVisual_diffInteraction <- function(object, comparison = c(1,2), measure = c("
 
   igraph::E(g)$loop.angle <- 0
   if(sum(edge.start[,2]==edge.start[,1])!=0){
+    igraph::E(g)$loop.angle <- NA
     igraph::E(g)$loop.angle[which(edge.start[,2]==edge.start[,1])]<-loop.angle[edge.start[which(edge.start[,2]==edge.start[,1]),1]]
   }
   radian.rescale <- function(x, start=0, direction=1) {
